@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile.dev # Usar Dockerfile de desarrollo
+      args:
+        RUBY_VERSION: 3.4.5
+    volumes:
+      - ./backend/app:/app/app
+      - ./backend/config:/app/config
+      - ./backend/db:/app/db
+      - ./backend/lib:/app/lib
+      - ./backend/public:/app/public
+      - bundle:/usr/local/bundle
+    ports:
+      - "3001:3001" # Asegurar el mapeo correcto del puerto
+    environment:
+      RAILS_ENV: development
+      BUNDLE_PATH: /usr/local/bundle
+      REDIS_URL: redis://redis:6379/0
+    command: ./bin/rails server -b 0.0.0.0 -p 3001
+    depends_on:
+      - redis
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev 
+    volumes:
+      - ./frontend:/app:cached
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+    command: yarn dev
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+volumes:
+  bundle:
+  node_modules:

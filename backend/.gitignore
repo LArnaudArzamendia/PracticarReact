@@ -1,0 +1,70 @@
+# Ignore bundler config.
+.bundle
+
+# Ignore all logfiles and tempfiles.
+log/*
+tmp/*
+!log/.keep
+!tmp/.keep
+
+# Ignore PID files, socket files, and cache
+*.pid
+*.pid.lock
+*.seed
+*.cache
+*.sock
+
+# Ignore uploaded files in development and test
+storage/*
+!storage/.keep
+
+# Ignore master key for decrypting credentials and any environment files
+/config/master.key
+/config/credentials/*.key
+
+# Ignore dotenv environment variables files
+.env
+.env.*
+!.env.example
+
+# Ignore Rails 6+ encrypted credentials
+/config/credentials/*.enc
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# Ignore various IDE config files
+.idea/
+.vscode/
+*.swp
+
+# Ignore coverage reports
+coverage/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Yarn / Node modules if present
+node_modules/
+
+# Ignore compiled assets (if any)
+public/assets
+public/packs
+public/packs-test
+public/packs-dev
+public/assets-test
+public/assets-dev
+
+# Ignore Spring's temp files
+.spring/
+
+# Ignore SQLite databases (if used in dev/test)
+storage/*.sqlite3
+storage/*.sqlite3-journal
+
+*.sqlite3
+*.sqlite3-journal
+
+# Ignore Capybara screenshots
+capybara-*.html

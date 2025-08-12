@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Opcional: mostrar ayuda si se llama con --help
+if [[ "$1" == "--help" ]]; then
+  echo "Uso: bin/lint [opciones]"
+  echo ""
+  echo "Sin argumentos: revisa y corrige automáticamente app/ y spec/"
+  echo "Con argumentos: pasa los argumentos directamente a rubocop"
+  echo ""
+  echo "Ejemplos:"
+  echo "  bin/lint                 # autocorrección segura en app/ y spec/"
+  echo "  bin/lint -A              # autocorrección full"
+  echo "  bin/lint spec/           # revisar solo spec/"
+  exit 0
+fi
+
+if [ "$#" -eq 0 ]; then
+  echo ">> Linting and autocorrecting app/ and spec/ with RuboCop..."
+  bundle exec rubocop -A app/ spec/
+else
+  bundle exec rubocop "$@"
+fi

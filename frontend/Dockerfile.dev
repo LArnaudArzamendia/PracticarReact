@@ -1,0 +1,25 @@
+FROM node:24-alpine
+
+WORKDIR /app
+
+# Dependencias de compilación (si hay node-gyp, sharp, etc.)
+RUN apk add --no-cache python3 make g++ git
+
+# Evita problemas de resolución IPv6 en algunos entornos
+ENV NODE_OPTIONS=--dns-result-order=ipv4first
+
+# Copia SOLO manifest + lockfile de Yarn
+COPY package.json yarn.lock ./
+
+# Aumenta timeout y usa cache de yarn
+RUN yarn config set network-timeout 600000 -g
+
+# Cache de Yarn para acelerar builds
+RUN --mount=type=cache,target=/usr/local/share/.cache/yarn \
+    yarn install --frozen-lockfile
+
+# Luego copia el resto del proyecto
+COPY . .
+
+EXPOSE 3000
+CMD ["yarn", "dev", "--host", "0.0.0.0"]

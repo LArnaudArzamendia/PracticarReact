@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: MyString
+  description: MyText
+  starts_on: 2025-08-08
+  ends_on: 2025-08-08
+  public: false
+
+two:
+  user: two
+  title: MyString
+  description: MyText
+  starts_on: 2025-08-08
+  ends_on: 2025-08-08
+  public: false

@@ -1,0 +1,25 @@
+AllCops:
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  Include:
+    - 'app/**/*.rb'
+    - 'spec/**/*.rb'
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'storage/**/*'
+
+Layout/LineLength:
+  Max: 120
+
+Layout/IndentationWidth:
+  Width: 2
+
+Rails:
+  Enabled: true
+
+RSpec:
+  Enabled: true

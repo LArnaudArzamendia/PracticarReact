@@ -1,0 +1,21 @@
+# ==== Archivos de sistema (macOS, Windows) ====
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# ==== Archivos temporales genéricos ====
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+*.bak
+*.orig
+*.rej
+
+# ==== Configuración de IDEs ====
+.vscode/
+.idea/
+*.iml

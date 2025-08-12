@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+      args:
+        RUBY_VERSION: 3.3.4
+    volumes:
+      - bundle_data:/usr/local/bundle
+      - rails_storage:/app/storage
+    ports:
+      - "3001:3001"
+    environment:
+      RAILS_ENV: production
+      BUNDLE_PATH: /usr/local/bundle
+      REDIS_URL: redis://redis:6379/0
+      RAILS_LOG_TO_STDOUT: "1"
+      RAILS_SERVE_STATIC_FILES: "1"
+      # SECRET_KEY_BASE:
+      # DATABASE_URL: <postgres://...>
+    command: ./bin/rails server -b 0.0.0.0 -p 3001
+    depends_on:
+      - redis
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+    command: yarn dev
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+volumes:
+  bundle_data:
+  rails_storage:
+  node_modules:

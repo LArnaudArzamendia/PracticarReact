@@ -1,0 +1,29 @@
+# Use Ruby image based on version specified
+ARG RUBY_VERSION=3.4.5
+FROM ruby:$RUBY_VERSION
+
+ENV RAILS_ENV=development \
+    BUNDLE_PATH=/usr/local/bundle \
+    GEM_HOME=/usr/local/bundle \
+    BUNDLE_BIN=/usr/local/bundle/bin \
+    PATH=/app/bin:$BUNDLE_BIN:$PATH
+
+WORKDIR /app
+
+RUN apt-get update -qq && \
+    apt-get install -y build-essential libsqlite3-dev libvips-dev nodejs
+
+# Instala gems usando sólo Gemfile* para cachear
+COPY backend/Gemfile backend/Gemfile.lock ./
+RUN bundle install
+
+# Copia la app completa
+COPY backend .
+
+# (IMPORTANTE) ajusta permisos *después* de copiar todo
+RUN chmod +x /app/bin/docker-entrypoint-development.sh
+
+EXPOSE 3001
+
+ENTRYPOINT ["/app/bin/docker-entrypoint-development.sh"]
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3001"]

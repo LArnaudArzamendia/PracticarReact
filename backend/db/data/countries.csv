@@ -1,0 +1,119 @@
+iso2,iso3,name_en,name_es,numeric_code,calling_code,region,subregion
+AF,AFG,Afghanistan,Afganistán,004,+93,Asia,Southern Asia
+AL,ALB,Albania,Albania,008,+355,Europe,Southern Europe
+DZ,DZA,Algeria,Argelia,012,+213,Africa,Northern Africa
+AS,ASM,American Samoa,Samoa Americana,016,+1-684,Oceania,Polynesia
+AD,AND,Andorra,Andorra,020,+376,Europe,Southern Europe
+AO,AGO,Angola,Angola,024,+244,Africa,Sub-Saharan Africa
+AI,AIA,Anguilla,Anguila,660,+1-264,Americas,Caribbean
+AQ,ATA,Antarctica,Antártida,010,,Antarctica,
+AG,ATG,Antigua and Barbuda,Antigua y Barbuda,028,+1-268,Americas,Caribbean
+AR,ARG,Argentina,Argentina,032,+54,Americas,South America
+AM,ARM,Armenia,Armenia,051,+374,Asia,Western Asia
+AW,ABW,Aruba,Aruba,533,+297,Americas,Caribbean
+AU,AUS,Australia,Australia,036,+61,Oceania,Australia and New Zealand
+AT,AUT,Austria,Austria,040,+43,Europe,Western Europe
+AZ,AZE,Azerbaijan,Azerbaiyán,031,+994,Asia,Western Asia
+BS,BHS,Bahamas,Bahamas,044,+1-242,Americas,Caribbean
+BH,BHR,Bahrain,Bahréin,048,+973,Asia,Western Asia
+BD,BGD,Bangladesh,Bangladés,050,+880,Asia,Southern Asia
+BB,BRB,Barbados,Barbados,052,+1-246,Americas,Caribbean
+BY,BLR,Belarus,Bielorrusia,112,+375,Europe,Eastern Europe
+BE,BEL,Belgium,Bélgica,056,+32,Europe,Western Europe
+BZ,BLZ,Belize,Belice,084,+501,Americas,Central America
+BJ,BEN,Benin,Benín,204,+229,Africa,Sub-Saharan Africa
+BM,BMU,Bermuda,Bermudas,060,+1-441,Americas,Northern America
+BT,BTN,Bhutan,Bután,064,+975,Asia,Southern Asia
+BO,BOL,Bolivia (Plurinational State of),Bolivia,068,+591,Americas,South America
+BQ,BES,"Bonaire, Sint Eustatius and Saba","Bonaire, San Eustaquio y Saba",535,+599,Americas,Caribbean
+BA,BIH,Bosnia and Herzegovina,Bosnia y Herzegovina,070,+387,Europe,Southern Europe
+BW,BWA,Botswana,Botsuana,072,+267,Africa,Sub-Saharan Africa
+BR,BRA,Brazil,Brasil,076,+55,Americas,South America
+IO,IOT,British Indian Ocean Territory,Territorio Británico del Océano Índico,086,+246,Africa,Eastern Africa
+BN,BRN,Brunei Darussalam,Brunéi Darussalam,096,+673,Asia,South-Eastern Asia
+BG,BGR,Bulgaria,Bulgaria,100,+359,Europe,Eastern Europe
+BF,BFA,Burkina Faso,Burkina Faso,854,+226,Africa,Sub-Saharan Africa
+BI,BDI,Burundi,Burundi,108,+257,Africa,Sub-Saharan Africa
+CV,CPV,Cabo Verde,Cabo Verde,132,+238,Africa,Sub-Saharan Africa
+KH,KHM,Cambodia,Camboya,116,+855,Asia,South-Eastern Asia
+CM,CMR,Cameroon,Camerún,120,+237,Africa,Sub-Saharan Africa
+CA,CAN,Canada,Canadá,124,+1,Americas,Northern America
+KY,CYM,Cayman Islands,Islas Caimán,136,+1-345,Americas,Caribbean
+CF,CAF,Central African Republic,República Centroafricana,140,+236,Africa,Sub-Saharan Africa
+TD,TCD,Chad,Chad,148,+235,Africa,Sub-Saharan Africa
+CL,CHL,Chile,Chile,152,+56,Americas,South America
+CN,CHN,China,China,156,+86,Asia,Eastern Asia
+CX,CXR,Christmas Island,Isla de Navidad,162,+61,Oceania,Australia and New Zealand
+CC,CCK,Cocos (Keeling) Islands,Islas Cocos,166,+61,Oceania,Australia and New Zealand
+CO,COL,Colombia,Colombia,170,+57,Americas,South America
+KM,COM,Comoros,Comoras,174,+269,Africa,Sub-Saharan Africa
+CG,COG,Congo,Congo,178,+242,Africa,Sub-Saharan Africa
+CD,COD,"Congo, Democratic Republic of the","Congo, República Democrática del",180,+243,Africa,Sub-Saharan Africa
+CK,COK,Cook Islands,Islas Cook,184,+682,Oceania,Polynesia
+CR,CRI,Costa Rica,Costa Rica,188,+506,Americas,Central America
+CI,CIV,Côte d'Ivoire,Costa de Marfil,384,+225,Africa,Sub-Saharan Africa
+HR,HRV,Croatia,Croacia,191,+385,Europe,Southern Europe
+CU,CUB,Cuba,Cuba,192,+53,Americas,Caribbean
+CW,CUW,Curaçao,Curazao,531,+599,Americas,Caribbean
+CY,CYP,Cyprus,Chipre,196,+357,Asia,Western Asia
+CZ,CZE,Czechia,Chequia,203,+420,Europe,Eastern Europe
+DK,DNK,Denmark,Dinamarca,208,+45,Europe,Northern Europe
+DJ,DJI,Djibouti,Yibuti,262,+253,Africa,Sub-Saharan Africa
+DM,DMA,Dominica,Dominica,212,+1-767,Americas,Caribbean
+DO,DOM,Dominican Republic,República Dominicana,214,+1-809,Americas,Caribbean
+EC,ECU,Ecuador,Ecuador,218,+593,Americas,South America
+EG,EGY,Egypt,Egipto,818,+20,Africa,Northern Africa
+SV,SLV,El Salvador,El Salvador,222,+503,Americas,Central America
+GQ,GNQ,Equatorial Guinea,Guinea Ecuatorial,226,+240,Africa,Sub-Saharan Africa
+ER,ERI,Eritrea,Eritrea,232,+291,Africa,Sub-Saharan Africa
+EE,EST,Estonia,Estonia,233,+372,Europe,Northern Europe
+SZ,SWZ,Eswatini,Esuatini,748,+268,Africa,Sub-Saharan Africa
+ET,ETH,Ethiopia,Etiopía,231,+251,Africa,Sub-Saharan Africa
+FK,FLK,Falkland Islands (Malvinas),Islas Malvinas,238,+500,Americas,South America
+FO,FRO,Faroe Islands,Islas Feroe,234,+298,Europe,Northern Europe
+FJ,FJI,Fiji,Fiyi,242,+679,Oceania,Melanesia
+FI,FIN,Finland,Finlandia,246,+358,Europe,Northern Europe
+FR,FRA,France,Francia,250,+33,Europe,Western Europe
+GF,GUF,French Guiana,Guayana Francesa,254,+594,Americas,South America
+PF,PYF,French Polynesia,Polinesia Francesa,258,+689,Oceania,Polynesia
+TF,ATF,French Southern Territories,Tierras Australes y Antárticas Francesas,260,+262,Africa,Eastern Africa
+GA,GAB,Gabon,Gabón,266,+241,Africa,Sub-Saharan Africa
+GM,GMB,Gambia,Gambia,270,+220,Africa,Sub-Saharan Africa
+GE,GEO,Georgia,Georgia,268,+995,Asia,Western Asia
+DE,DEU,Germany,Alemania,276,+49,Europe,Western Europe
+GH,GHA,Ghana,Ghana,288,+233,Africa,Sub-Saharan Africa
+GI,GIB,Gibraltar,Gibraltar,292,+350,Europe,Southern Europe
+GR,GRC,Greece,Grecia,300,+30,Europe,Southern Europe
+GL,GRL,Greenland,Groenlandia,304,+299,Americas,Northern America
+GD,GRD,Grenada,Granada,308,+1-473,Americas,Caribbean
+GU,GUM,Guam,Guam,316,+1-671,Oceania,Micronesia
+GT,GTM,Guatemala,Guatemala,320,+502,Americas,Central America
+GG,GGY,Guernsey,Guernsey,831,+44,Europe,Northern Europe
+GN,GIN,Guinea,Guinea,324,+224,Africa,Sub-Saharan Africa
+GW,GNB,Guinea-Bissau,Guinea-Bisáu,624,+245,Africa,Sub-Saharan Africa
+GY,GUY,Guyana,Guyana,328,+592,Americas,South America
+HT,HTI,Haiti,Haití,332,+509,Americas,Caribbean
+VA,VAT,Holy See (Vatican City State),Santa Sede,336,+379,Europe,Southern Europe
+HN,HND,Honduras,Honduras,340,+504,Americas,Central America
+HK,HKG,Hong Kong,Hong Kong,344,+852,Asia,Eastern Asia
+HU,HUN,Hungary,Hungría,348,+36,Europe,Central Europe
+IS,ISL,Iceland,Islandia,352,+354,Europe,Northern Europe
+IN,IND,India,India,356,+91,Asia,Southern Asia
+ID,IDN,Indonesia,Indonesia,360,+62,Asia,South-Eastern Asia
+IR,IRN,Iran (Islamic Republic of),Irán,364,+98,Asia,Southern Asia
+IQ,IRQ,Iraq,Irak,368,+964,Asia,Western Asia
+IE,IRL,Ireland,Irlanda,372,+353,Europe,Northern Europe
+IM,IMN,Isle of Man,Isla de Man,833,+44,Europe,Northern Europe
+IL,ISR,Israel,Israel,376,+972,Asia,Western Asia
+IT,ITA,Italy,Italia,380,+39,Europe,Southern Europe
+JM,JAM,Jamaica,Jamaica,388,+1-876,Americas,Caribbean
+JP,JPN,Japan,Japón,392,+81,Asia,Eastern Asia
+JE,JEY,Jersey,Jersey,832,+44,Europe,Northern Europe
+JO,JOR,Jordan,Jordania,400,+962,Asia,Western Asia
+KZ,KAZ,Kazakhstan,Kazajistán,398,+7,Asia,Central Asia
+KE,KEN,Kenya,Kenia,404,+254,Africa,Sub-Saharan Africa
+KI,KIR,Kiribati,Kiribati,296,+686,Oceania,Micronesia
+KP,PRK,"Korea, Democratic People's Republic of",Corea del Norte,408,+850,Asia,Eastern Asia
+KR,KOR,"Korea, Republic of",Corea del Sur,410,+82,Asia,Eastern Asia
+KW,KWT,Kuwait,Kuwait,414,+965,Asia,Western Asia
+KG,KGZ,Kyrgyzstan,Kirguistán,417,+996,Asia,Central Asia

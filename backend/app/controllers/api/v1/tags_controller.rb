@@ -1,64 +1,32 @@
-# app/controllers/api/v1/tags_controller.rb
 class API::V1::TagsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_picture
 
+  # GET /api/v1/pictures/:picture_id/tags
   def index
-    tags = @picture.tags.includes(:user)
-    render json: tags.as_json(include: { user: { only: [:id, :email, :handle, :name] } }), status: :ok
+    picture = Picture.find(params[:picture_id])
+    render json: picture.tags.includes(:user).map { |t|
+      { id: t.id, user_id: t.user_id, handle: t.user.handle, x_frac: t.x_frac, y_frac: t.y_frac }
+    }
   end
 
+  # POST /api/v1/pictures/:picture_id/tags
   def create
-    # 🔒 dueñ@ del post/picture solamente
-    unless owns_picture?
-      render json: { error: "Forbidden" }, status: :forbidden
-      return
-    end
-
-    user = resolve_user!
-    tag  = @picture.tags.find_or_initialize_by(user: user)
-    tag.assign_attributes(tag_params.slice(:x_frac, :y_frac))
-
-    if tag.save
-      render json: tag.as_json(include: { user: { only: [:id, :email, :handle, :name] } }), status: :ok
-    else
-      render json: { errors: tag.errors.full_messages }, status: :unprocessable_content
-    end
+    picture = Picture.find(params[:picture_id])
+    tag = picture.tags.create!(tag_params)
+    render json: { id: tag.id, user_id: tag.user_id, handle: tag.user.handle, x_frac: tag.x_frac, y_frac: tag.y_frac }, status: :created
   end
 
+  # DELETE /api/v1/pictures/:picture_id/tags/:id
   def destroy
-    # 🔒 dueñ@ del post/picture solamente
-    unless owns_picture?
-      render json: { error: "Forbidden" }, status: :forbidden
-      return
-    end
-
-    tag = @picture.tags.find_by!(id: params[:id])
-    tag.destroy!
+    picture = Picture.find(params[:picture_id])
+    tag = picture.tags.find(params[:id])
+    tag.destroy
     head :no_content
   end
 
   private
 
-  def set_picture
-    @picture = Picture.find(params[:picture_id])
-  end
-
   def tag_params
-    params.require(:tag).permit(:user_id, :user_handle, :x_frac, :y_frac)
-  end
-
-  def resolve_user!
-    if tag_params[:user_id].present?
-      User.find(tag_params[:user_id])
-    elsif tag_params[:user_handle].present?
-      User.find_by!(handle: tag_params[:user_handle])
-    else
-      raise ActiveRecord::RecordNotFound, "user_id or user_handle required"
-    end
-  end
-
-  def owns_picture?
-    @picture&.post&.user_id == current_user.id
+    params.require(:tag).permit(:user_id, :x_frac, :y_frac)
   end
 end

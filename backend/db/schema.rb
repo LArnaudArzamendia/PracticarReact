@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_11_134336) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_02_120000) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -168,6 +168,20 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_134336) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "video_tags", force: :cascade do |t|
+    t.integer "video_id", null: false
+    t.integer "user_id", null: false
+    t.decimal "x_frac", precision: 4, scale: 3
+    t.decimal "y_frac", precision: 4, scale: 3
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_video_tags_on_user_id"
+    t.index ["video_id", "user_id"], name: "index_video_tags_on_video_id_and_user_id", unique: true
+    t.index ["video_id"], name: "index_video_tags_on_video_id"
+    t.check_constraint "x_frac BETWEEN 0 AND 1", name: "chk_video_tags_x_frac_0_1"
+    t.check_constraint "y_frac BETWEEN 0 AND 1", name: "chk_video_tags_y_frac_0_1"
+  end
+
   create_table "videos", force: :cascade do |t|
     t.integer "post_id", null: false
     t.string "caption"
@@ -192,5 +206,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_134336) do
   add_foreign_key "trip_locations", "trips"
   add_foreign_key "trips", "users"
   add_foreign_key "users", "countries"
+  add_foreign_key "video_tags", "users"
+  add_foreign_key "video_tags", "videos"
   add_foreign_key "videos", "posts"
 end

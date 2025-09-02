@@ -18,10 +18,15 @@ Rails.application.routes.draw do
           get :search
         end
       end
+      resources :users, only: [:show] do
+        collection { get :search }
+      end
       resources :pictures, only: %i[index show create update destroy] do
         resources :tags, only: [:index, :create, :destroy]
       end
-      resources :videos,   only: %i[index show create update destroy]
+      resources :videos,   only: %i[index show create update destroy] do
+        resources :tags, controller: 'video_tags', only: [:index, :create, :destroy]
+      end
       resources :audios,   only: %i[index show create update destroy]      
     end
   end

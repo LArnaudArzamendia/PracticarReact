@@ -1,15 +1,16 @@
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+const API_BASE  = import.meta.env.VITE_API_BASE_URL  || '/api';
+const AUTH_BASE = import.meta.env.VITE_AUTH_BASE_URL || '';   
 
 export async function signIn({ email, password }) {
-  const res = await fetch(`${API_BASE}/users/sign_in`, {
+  const res = await fetch(`${AUTH_BASE}/users/sign_in`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    credentials: 'include', // importante para cookie http-only
+    credentials: 'include',
     body: JSON.stringify({ user: { email, password } }),
   });
 
   let data = null;
-  try { data = await res.json(); } catch { /* empty */ }
+  try { data = await res.json(); } catch {}
 
   if (!res.ok) {
     const message = (data && (data.error || data.message)) || 'Login error';
@@ -19,11 +20,10 @@ export async function signIn({ email, password }) {
 }
 
 export async function signOut() {
-  const res = await fetch(`${API_BASE}/users/sign_out`, {
+  const res = await fetch(`${AUTH_BASE}/users/sign_out`, {
     method: 'DELETE',
     credentials: 'include',
   });
-  // algunas configuraciones devuelven 204/200 sin cuerpo
   if (!res.ok) throw new Error('No se pudo cerrar sesión');
   return { status: 'logged_out' };
 }
